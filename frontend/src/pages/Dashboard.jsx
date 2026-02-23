@@ -24,8 +24,8 @@ const Dashboard = () => {
   const statusColors = {
     'New': 'bg-gray-100 text-gray-800',
     'In Progress': 'bg-blue-100 text-blue-800',
-    'Won': 'bg-green-100 text-green-800',
-    'Lost': 'bg-red-100 text-red-800'
+    'In Action': 'bg-green-100 text-green-800',
+    'Done': 'bg-purple-100 text-purple-800'
   };
 
   // Load inquiries when component mounts or filters change
@@ -128,7 +128,7 @@ const Dashboard = () => {
                   <option value="">All Statuses</option>
                   <option value="New">New</option>
                   <option value="In Progress">In Progress</option>
-                  <option value="Action">In Action</option>
+                  <option value="In Action">In Action</option>
                   <option value="Done">Done</option>
                 </select>
               </div>

@@ -164,10 +164,10 @@ const Login = () => {
                 </div>
                 <div className="ml-3">
                   <h4 className="text-sm font-semibold text-blue-800">Demo Access</h4>
-                  {/*<div className="mt-2 text-sm text-blue-700 space-y-1">
+                  <div className="mt-2 text-sm text-blue-700 space-y-1">
                     <p><span className="font-medium">Email:</span> admin@example.com</p>
                     <p><span className="font-medium">Password:</span> password123</p>
-                  </div>*/}
+                  </div>
                 </div>
               </div>
             </div>

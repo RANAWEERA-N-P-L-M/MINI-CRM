@@ -136,7 +136,7 @@ exports.updateInquiry = async (req, res) => {
     const { status } = req.body;
     
     // Validate status
-    const validStatuses = ['New', 'In Progress', 'Won', 'Lost'];
+    const validStatuses = ['New', 'In Progress', 'In Action', 'Done'];
     if (!validStatuses.includes(status)) {
       return res.status(400).json({
         status: 'error',
