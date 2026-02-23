@@ -26,12 +26,14 @@ const Navbar = () => {
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                to="/"
-                className="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Submit Inquiry
-              </Link>
+              {!isAuthenticated && (
+                <Link
+                  to="/"
+                  className="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                >
+                  Submit Inquiry
+                </Link>
+              )}
               
               {isAuthenticated ? (
                 <>
@@ -65,12 +67,14 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden">
             <div className="space-y-1">
-              <Link
-                to="/"
-                className="text-white block hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Submit Inquiry
-              </Link>
+              {!isAuthenticated && (
+                <Link
+                  to="/"
+                  className="text-white block hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Submit Inquiry
+                </Link>
+              )}
               {isAuthenticated ? (
                 <>
                   <Link
