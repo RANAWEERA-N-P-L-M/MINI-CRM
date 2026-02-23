@@ -177,7 +177,7 @@ const Login = () => {
         {/* Footer */}
         <div className="text-center">
           <p className="text-xs text-gray-500">
-            © 2026 MINI CRM. Secure access portal.
+             2026 MINI CRM. Secure access portal.
           </p>
         </div>
       </div>
