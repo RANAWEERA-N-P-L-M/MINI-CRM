@@ -218,3 +218,54 @@ exports.addFollowUp = async (req, res) => {
     });
   }
 };
+
+// Track inquiry by reference code (Public route)
+exports.trackInquiry = async (req, res) => {
+  try {
+    const { referenceCode } = req.params;
+
+    // Validate reference code
+    if (!referenceCode) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Reference code is required'
+      });
+    }
+
+    // Find inquiry by reference code
+    const inquiry = await Inquiry.findOne({ referenceCode: referenceCode.toUpperCase() });
+    
+    if (!inquiry) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'No inquiry found with this reference code'
+      });
+    }
+
+    // Get follow-ups for this inquiry
+    const followUps = await FollowUp.find({ inquiryId: inquiry._id })
+      .sort({ createdAt: -1 })
+      .select('note createdAt'); // Only return note and date, not internal fields
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        inquiry: {
+          referenceCode: inquiry.referenceCode,
+          name: inquiry.name,
+          serviceType: inquiry.serviceType,
+          status: inquiry.status,
+          createdAt: inquiry.createdAt,
+          updatedAt: inquiry.updatedAt
+        },
+        followUps
+      }
+    });
+  } catch (error) {
+    console.error('Track inquiry error:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to track inquiry'
+    });
+  }
+};
