@@ -10,6 +10,7 @@ import InquiryForm from './pages/InquiryForm';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import InquiryDetail from './pages/InquiryDetail';
+import TrackInquiry from './pages/TrackInquiry';
 
 
 import './index.css';
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             
             <Route path="/" element={<InquiryForm />} />
+            <Route path="/track" element={<TrackInquiry />} />
             <Route path="/login" element={<Login />} />
             
             

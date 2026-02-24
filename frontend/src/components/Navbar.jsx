@@ -27,12 +27,20 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {!isAuthenticated && (
-                <Link
-                  to="/"
-                  className="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  Submit Inquiry
-                </Link>
+                <>
+                  <Link
+                    to="/"
+                    className="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    Submit Inquiry
+                  </Link>
+                  <Link
+                    to="/track"
+                    className="text-white hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                  >
+                    Track Inquiry
+                  </Link>
+                </>
               )}
               
               {isAuthenticated ? (
@@ -68,12 +76,20 @@ const Navbar = () => {
           <div className="md:hidden">
             <div className="space-y-1">
               {!isAuthenticated && (
-                <Link
-                  to="/"
-                  className="text-white block hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Submit Inquiry
-                </Link>
+                <>
+                  <Link
+                    to="/"
+                    className="text-white block hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Submit Inquiry
+                  </Link>
+                  <Link
+                    to="/track"
+                    className="text-white block hover:bg-blue-500 px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Track Inquiry
+                  </Link>
+                </>
               )}
               {isAuthenticated ? (
                 <>

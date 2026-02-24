@@ -103,6 +103,12 @@ export const inquiryAPI = {
     const response = await api.get('/inquiries/admin', { params: searchParams });
     return response.data;
   },
+
+  // Track inquiry by reference code (public)
+  trackInquiry: async (referenceCode) => {
+    const response = await api.get(`/inquiries/track/${referenceCode}`);
+    return response.data;
+  },
 };
 
 // Utility function to handle API errors
